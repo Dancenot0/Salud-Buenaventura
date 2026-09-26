@@ -1,0 +1,16 @@
+{
+  "name": "salud-buenaventura-tools",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Subagentes de QA y scaffolding para el prototipo Salud Buenaventura (solo desarrollo).",
+  "scripts": {
+    "validate": "node validate-data.mjs",
+    "links": "node check-links.mjs",
+    "smoke": "node smoke-test.mjs",
+    "test": "node validate-data.mjs && node check-links.mjs && node smoke-test.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0"
+  }
+}

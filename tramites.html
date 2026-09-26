@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trámites de salud guiados · Salud Buenaventura</title>
+  <meta name="description" content="Guías paso a paso de trámites de salud en Buenaventura: afiliación a EPS, Sisbén, citas, certificados, traslados y quejas ante la Supersalud.">
+  <meta name="theme-color" content="#F4F8F9">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="tramites">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__orb ambient__orb--a"></div>
+    <div class="ambient__orb ambient__orb--b"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <div id="sb-header"></div>
+
+  <main id="contenido" class="page-body">
+
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb reveal" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span data-icon="chevron-right" data-icon-size="14"></span>
+          <span aria-current="page">Trámites</span>
+        </nav>
+        <p class="eyebrow reveal" style="margin-top:var(--sp-5)">Paso a paso, sin vueltas</p>
+        <h1 class="h1 display reveal" style="--d:60ms;font-size:var(--fs-h1)">Trámites de salud, en lenguaje claro</h1>
+        <p class="lead reveal" style="--d:120ms">
+          Qué necesita, cuánto tarda, cuánto cuesta y por qué canal oficial se hace.
+          Cada guía resume el trámite completo para que lo resuelva en un solo intento.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight" style="padding-top:0">
+      <div class="container container--sm" style="max-width:960px">
+
+        <div class="toolbar reveal" style="position:static" role="search" aria-label="Buscar trámites">
+          <div class="toolbar__row" style="grid-template-columns:1fr">
+            <div class="searchbar">
+              <span class="searchbar__icon" data-icon="search" data-icon-size="18"></span>
+              <label class="sr-only" for="t-q">Buscar trámite</label>
+              <input id="t-q" data-search-main type="search" placeholder="Busque «EPS», «Sisbén», «vacunas», «queja»…" autocomplete="off">
+            </div>
+          </div>
+          <div class="toolbar__chips" id="t-chips"></div>
+        </div>
+
+        <div class="toolbar__meta" style="margin-bottom:var(--sp-5)">
+          <p id="tramites-count" aria-live="polite"></p>
+        </div>
+
+        <div class="accordion" id="tramites-list"></div>
+
+        <div class="alert alert--info reveal" style="margin-top:var(--sp-8)">
+          <span data-icon="info" data-icon-size="20"></span>
+          <span>
+            <span class="alert__title">La orientación es gratuita, y los trámites también</span>
+            Ningún trámite de afiliación, Sisbén o vacunación tiene costo. Si alguien le cobra por ellos,
+            repórtelo a la <a class="link" href="https://www.supersalud.gov.co" target="_blank" rel="noopener">Superintendencia de Salud</a> (01 8000 51 37 00).
+          </span>
+        </div>
+
+        <div class="card reveal" style="margin-top:var(--sp-6);display:flex;gap:var(--sp-5);align-items:center;flex-wrap:wrap">
+          <span class="tile tile--danger" data-icon="siren" data-icon-size="24"></span>
+          <div style="flex:1;min-width:220px">
+            <h2 class="h3" style="font-size:1.08rem">¿Su caso es una urgencia?</h2>
+            <p class="small muted">No haga filas ni trámites: consulte las rutas de atención inmediata y las líneas 24 h.</p>
+          </div>
+          <a class="btn btn--danger" href="urgencias.html">Ir a urgencias <span data-icon="arrow-right" data-icon-size="15"></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sb-footer"></div>
+
+  <script src="js/core/iconos.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/data/datos.js"></script>
+  <script src="js/core/render.js"></script>
+  <script src="js/core/chrome.js"></script>
+  <script src="js/pages/tramites.js"></script>
+</body>
+</html>

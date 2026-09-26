@@ -1,0 +1,194 @@
+/* ============================================================
+   SALUD BUENAVENTURA · DESIGN TOKENS
+   ------------------------------------------------------------
+   Fuente única de verdad del sistema de diseño.
+   Ningún componente debe usar valores crudos: siempre tokens.
+   Ver documentación completa en docs/BIBLIA.md y
+   sistema-de-diseno.html (Biblia interactiva).
+   ============================================================ */
+
+:root {
+  /* ---------- Paleta · Marca (Azul-Pacífico) ----------
+     Inspirada en el océano Pacífico y la confianza institucional
+     sanitaria. Un solo hueco de marca: sin degradados de fantasía,
+     sin neones. Contraste AA verificado sobre blanco.            */
+  --c-brand-50:  #EFF8FA;
+  --c-brand-100: #DAEEF3;
+  --c-brand-200: #B5DDE8;
+  --c-brand-300: #83C5D6;
+  --c-brand-400: #4AA6BE;
+  --c-brand-500: #2289A4;
+  --c-brand-600: #14708B;  /* Primario · botones, enlaces, iconos */
+  --c-brand-700: #105B72;  /* Hover / texto de marca              */
+  --c-brand-800: #114A5D;
+  --c-brand-900: #0E3B4A;
+  --c-abyss:     #0A2B36;  /* Paneles oscuros (footer, CTA final) */
+
+  /* ---------- Paleta · Neutros (tinta azulada) ---------- */
+  --c-ink:        #0D2530;  /* Texto principal  · ~15:1 sobre blanco */
+  --c-ink-2:      #46616E;  /* Texto secundario · ~6:1                */
+  --c-ink-3:      #7C939E;  /* Texto terciario / meta · solo UI y ≥18px */
+  --c-line:       rgba(13, 37, 48, 0.10);  /* Bordes sobre claro   */
+  --c-line-soft:  rgba(13, 37, 48, 0.06);
+  --c-paper:      #FFFFFF;
+  --c-bg:         #F4F8F9;  /* Fondo base de la aplicación          */
+
+  /* ---------- Paleta · Acento cálido (arena del Pacífico) ----------
+     Uso decorativo y esporádico: blobs ambientales, detalles.       */
+  --c-sand:       #D9B876;
+  --c-sand-soft:  rgba(217, 184, 118, 0.14);
+
+  /* ---------- Paleta · Semántica (estados) ---------- */
+  --c-ok:         #17795A;  /* Abierto / verificado / éxito · 5.4:1  */
+  --c-ok-bg:      #E7F4EE;
+  --c-ok-line:    rgba(23, 121, 90, 0.25);
+  --c-warn:       #9A6B0F;  /* Por verificar / precaución · 4.6:1    */
+  --c-warn-bg:    #FBF2DF;
+  --c-warn-line:  rgba(154, 107, 15, 0.25);
+  --c-danger:     #B64438;  /* Urgencias / error · 5.4:1             */
+  --c-danger-bg:  #FBEBE8;
+  --c-danger-line:rgba(182, 68, 56, 0.25);
+  --c-info:       var(--c-brand-700);
+  --c-info-bg:    var(--c-brand-50);
+
+  /* ---------- Tipografía ----------
+     Stack nativo (SF Pro en Apple, Segoe en Windows, Roboto en
+     Android): cero descargas, métrica y kerning de plataforma.     */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Segoe UI", Roboto, "Helvetica Neue", Arial,
+               "Noto Sans", sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+               Consolas, "Liberation Mono", monospace;
+
+  /* Escala modular (rem). Titulares con tracking negativo (óptica Apple). */
+  --fs-display: clamp(2.6rem, 1.4rem + 4.6vw, 4rem);    /* 41.6 → 64px */
+  --fs-h1:      clamp(2rem, 1.5rem + 2.2vw, 2.9rem);    /* 32 → 46px   */
+  --fs-h2:      clamp(1.65rem, 1.3rem + 1.4vw, 2.3rem); /* 26 → 37px   */
+  --fs-h3:      1.35rem;                                 /* 21.6px      */
+  --fs-lead:    1.2rem;                                  /* 19.2px      */
+  --fs-body:    1.0625rem;                               /* 17px (óptimo Apple) */
+  --fs-sm:      0.9375rem;                               /* 15px        */
+  --fs-xs:      0.8125rem;                               /* 13px        */
+  --fs-eyebrow: 0.75rem;                                 /* 12px        */
+
+  --lh-tight:   1.08;
+  --lh-snug:    1.25;
+  --lh-body:    1.58;
+  --lh-loose:   1.7;
+
+  --trk-tight:  -0.03em;   /* display  */
+  --trk-snug:   -0.018em;  /* h1–h3    */
+  --trk-normal: 0;
+  --trk-wide:   0.09em;    /* eyebrows */
+
+  /* Peso: 400 base, 590–650 titulares (Semibold de sistema). */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 620;
+  --fw-bold:     700;
+
+  /* ---------- Espaciado (escala 4px) ---------- */
+  --sp-1:  0.25rem;  /* 4   */
+  --sp-2:  0.5rem;   /* 8   */
+  --sp-3:  0.75rem;  /* 12  */
+  --sp-4:  1rem;     /* 16  */
+  --sp-5:  1.25rem;  /* 20  */
+  --sp-6:  1.5rem;   /* 24  */
+  --sp-8:  2rem;     /* 32  */
+  --sp-10: 2.5rem;   /* 40  */
+  --sp-12: 3rem;     /* 48  */
+  --sp-16: 4rem;     /* 64  */
+  --sp-20: 5rem;     /* 80  */
+  --sp-24: 6rem;     /* 96  */
+
+  /* Ritmo vertical de sección */
+  --section-y: clamp(4.5rem, 3rem + 6vw, 7.5rem);
+
+  /* ---------- Radios (sensación de "squircle" continuo) ---------- */
+  --r-sm:   10px;   /* inputs, botones rectangulares, icon tiles */
+  --r-md:   14px;   /* badges, botones medios                    */
+  --r-lg:   20px;   /* tarjetas estándar                         */
+  --r-xl:   28px;   /* paneles hero, modales, tarjetas grandes   */
+  --r-pill: 999px;  /* CTAs, chips, nav                          */
+
+  /* ---------- Sombras (multicapa, tintadas al hueco de marca) ---------- */
+  --sh-xs:    0 1px 2px rgba(10, 43, 54, 0.05);
+  --sh-sm:    0 1px 2px rgba(10, 43, 54, 0.04),
+              0 4px 12px rgba(10, 43, 54, 0.05);
+  --sh-md:    0 2px 4px rgba(10, 43, 54, 0.04),
+              0 12px 28px rgba(10, 43, 54, 0.08);
+  --sh-lg:    0 4px 8px rgba(10, 43, 54, 0.04),
+              0 24px 56px rgba(10, 43, 54, 0.10);
+  --sh-brand: 0 6px 20px rgba(20, 112, 139, 0.28);
+  --sh-danger:0 6px 20px rgba(182, 68, 56, 0.24);
+
+  /* ---------- Glassmorphism (3 niveles jerárquicos) ----------
+     Regla de oro: el vidrio vive SOBRE un fondo con capas
+     (gradientes ambientales). Nunca vidrio sobre vidrio.
+     blur 16–24px + saturate 160–190% + borde blanco translúcido
+     + highlight especular superior (inset 1px).                  */
+
+  /* Nivel 1 · Chrome (navbar, barras sticky): más opaco, máximo blur */
+  --glass-chrome-bg:     linear-gradient(160deg, rgba(255,255,255,0.82), rgba(255,255,255,0.66));
+  --glass-chrome-filter: blur(22px) saturate(185%);
+  --glass-chrome-border: 1px solid rgba(255,255,255,0.72);
+  --glass-chrome-shadow: 0 1px 2px rgba(10,43,54,0.04),
+                         0 8px 24px rgba(10,43,54,0.07),
+                         inset 0 1px 0 rgba(255,255,255,0.92);
+
+  /* Nivel 2 · Superficie (tarjetas, paneles, modales claros) */
+  --glass-card-bg:     linear-gradient(158deg, rgba(255,255,255,0.72), rgba(255,255,255,0.52));
+  --glass-card-filter: blur(18px) saturate(170%);
+  --glass-card-border: 1px solid rgba(255,255,255,0.68);
+  --glass-card-shadow: 0 1px 2px rgba(10,43,54,0.03),
+                       0 8px 20px rgba(10,43,54,0.06),
+                       0 24px 48px rgba(10,43,54,0.06),
+                       inset 0 1px 0 rgba(255,255,255,0.85);
+
+  /* Nivel 3 · Tenue (chips, filas, celdas): apenas un velo */
+  --glass-veil-bg:     rgba(255,255,255,0.42);
+  --glass-veil-filter: blur(10px) saturate(140%);
+  --glass-veil-border: 1px solid rgba(255,255,255,0.55);
+
+  /* Vidrio oscuro (footer, panel CTA, scrim de modales) */
+  --glass-dark-bg:     linear-gradient(158deg, rgba(14,59,74,0.94), rgba(10,43,54,0.97));
+  --glass-dark-border: 1px solid rgba(255,255,255,0.14);
+  --scrim:             rgba(8, 26, 34, 0.45);
+
+  /* ---------- Movimiento ----------
+     Curva firma: expo-out suavizada (óptica "Apple").
+     Spring sutil solo para toggles/menús.                       */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.32, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 140ms;   /* micro: hover, press          */
+  --dur-2: 240ms;   /* componentes: chips, toggles  */
+  --dur-3: 420ms;   /* revelados, acordeones        */
+  --dur-4: 700ms;   /* escena: hero, secciones      */
+
+  /* ---------- Layout ---------- */
+  --container:    1180px;
+  --container-sm: 860px;
+  --gutter:       clamp(1.25rem, 4vw, 2.5rem);
+  --nav-h:        72px;
+
+  /* ---------- Elevación / capas ---------- */
+  --z-page:    0;
+  --z-sticky:  80;
+  --z-chrome:  100;
+  --z-sheet:   180;
+  --z-overlay: 200;
+  --z-toast:   300;
+
+  /* ---------- Foco visible (anillo accesible universal) ---------- */
+  --focus-ring: 0 0 0 3px rgba(255,255,255,0.9),
+                0 0 0 6px rgba(20, 112, 139, 0.45);
+}
+
+/* ============================================================
+   MODO OSCURO — v1.1 (hoja de ruta).
+   Los tokens ya están centralizados: activar el tema solo exige
+   re-mapear esta tabla. Ver docs/BIBLIA.md §11.
+   ============================================================ */

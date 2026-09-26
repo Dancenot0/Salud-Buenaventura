@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salud Buenaventura · Toda la salud del Distrito en un solo lugar</title>
+  <meta name="description" content="Plataforma de orientación ciudadana que centraliza los servicios de salud de Buenaventura: instituciones, horarios, requisitos, trámites y rutas de urgencia.">
+  <meta name="theme-color" content="#F4F8F9">
+  <meta property="og:title" content="Salud Buenaventura · Plataforma de orientación en salud">
+  <meta property="og:description" content="Encuentra instituciones, horarios, requisitos y canales oficiales de la red de salud del Distrito de Buenaventura.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="inicio">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Fondo ambiental por capas (decorativo) -->
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__orb ambient__orb--a"></div>
+    <div class="ambient__orb ambient__orb--b"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <div id="sb-header"></div>
+
+  <main id="contenido" class="page-body">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <p class="eyebrow reveal">Plataforma pública de orientación · Distrito de Buenaventura</p>
+            <h1 class="display hero__title reveal" style="--d:60ms">
+              Toda la salud de Buenaventura, en <span class="accent">un solo lugar</span>.
+            </h1>
+            <p class="lead hero__lead reveal" style="--d:120ms">
+              Encuentre instituciones, horarios, requisitos y canales oficiales de la red de
+              salud del Distrito. Información clara y centralizada para llegar al servicio
+              correcto, a la primera.
+            </p>
+
+            <form class="searchbar hero__search reveal" style="--d:180ms" id="hero-search-form" role="search" aria-label="Buscar servicios de salud">
+              <span class="searchbar__icon" data-icon="search" data-icon-size="20"></span>
+              <label class="sr-only" for="hero-search-input">Buscar institución, servicio o trámite</label>
+              <input id="hero-search-input" data-search-main type="search"
+                     placeholder="Busque «urgencias», «vacunación», «odontología», «EPS»…"
+                     autocomplete="off">
+              <kbd aria-hidden="true">/</kbd>
+              <button class="btn btn--primary" type="submit">Buscar</button>
+            </form>
+
+            <div class="hero__chips reveal" style="--d:240ms">
+              <span class="hero__chips-label">Consultas frecuentes:</span>
+              <button class="chip chip--danger" data-chip-serv="urgencias-24"><span data-icon="siren" data-icon-size="15"></span> Urgencias 24 h</button>
+              <button class="chip" data-chip-serv="vacunacion"><span data-icon="syringe" data-icon-size="15"></span> Vacunación</button>
+              <button class="chip" data-chip-serv="laboratorio"><span data-icon="microscope" data-icon-size="15"></span> Laboratorio</button>
+              <button class="chip" data-chip-serv="odontologia"><span data-icon="tooth" data-icon-size="15"></span> Odontología</button>
+              <button class="chip" data-chip-serv="salud-mental"><span data-icon="brain" data-icon-size="15"></span> Salud mental</button>
+            </div>
+
+            <div class="hero__trust reveal" style="--d:300ms">
+              <span><span data-icon="check-circle" data-icon-size="14"></span> Fichas con fecha de verificación</span>
+              <span><span data-icon="shield-check" data-icon-size="14"></span> Sin datos personales</span>
+              <span><span data-icon="accessibility" data-icon-size="14"></span> Accesible (WCAG 2.2 AA)</span>
+              <span><span data-icon="banknote" data-icon-size="14"></span> 100 % gratuita</span>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" style="--d:200ms" id="hero-visual" aria-label="Vista previa del directorio"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BANDA SOS ============ -->
+    <section class="section section--tight" aria-label="Emergencias">
+      <div class="container">
+        <div class="sos-strip reveal">
+          <span class="sos-strip__icon" data-icon="siren" data-icon-size="26"></span>
+          <div class="sos-strip__text">
+            <p class="sos-strip__title">¿Es una emergencia? Llame primero.</p>
+            <p class="sos-strip__desc">Líneas gratuitas desde cualquier operador, disponibles las 24 horas. Esta plataforma orienta: no despacha ambulancias.</p>
+          </div>
+          <div class="sos-strip__nums">
+            <a class="sos-num" href="tel:123"><strong>123</strong><span>Emergencias</span></a>
+            <a class="sos-num" href="tel:125"><strong>125</strong><span>Urgencias médicas</span></a>
+            <a class="sos-num" href="tel:132"><strong>132</strong><span>Cruz Roja</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACCIONES RÁPIDAS ============ -->
+    <section class="section section--tight" aria-label="Accesos rápidos">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">¿Qué necesita hoy?</p>
+          <h2 class="h2">Cuatro caminos, una sola respuesta</h2>
+        </div>
+        <div class="quick-grid">
+          <a class="card card--hover quick-card reveal" style="--d:0ms" href="servicios.html">
+            <span class="tile" data-icon="search" data-icon-size="22"></span>
+            <h3>Buscar una institución</h3>
+            <p>Directorio completo de hospitales, puestos de salud, puntos EPS y laboratorios del Distrito, con horarios y requisitos.</p>
+            <span class="quick-card__go">Explorar directorio <span data-icon="arrow-right" data-icon-size="15"></span></span>
+          </a>
+          <a class="card card--hover quick-card reveal" style="--d:80ms" href="tramites.html">
+            <span class="tile" data-icon="clipboard-list" data-icon-size="22"></span>
+            <h3>Hacer un trámite</h3>
+            <p>Afiliación a EPS, Sisbén, citas, certificados y quejas: guías paso a paso con requisitos y canales oficiales.</p>
+            <span class="quick-card__go">Ver trámites guiados <span data-icon="arrow-right" data-icon-size="15"></span></span>
+          </a>
+          <a class="card card--hover quick-card reveal" style="--d:160ms" href="urgencias.html">
+            <span class="tile tile--danger" data-icon="siren" data-icon-size="22"></span>
+            <h3>Una urgencia</h3>
+            <p>Rutas de atención para infarto, accidentes, embarazo, mordeduras de serpiente, dengue y crisis de salud mental.</p>
+            <span class="quick-card__go">Ver rutas de urgencia <span data-icon="arrow-right" data-icon-size="15"></span></span>
+          </a>
+          <a class="card card--hover quick-card reveal" style="--d:240ms" href="servicios.html?zona=rural">
+            <span class="tile tile--sand" data-icon="anchor" data-icon-size="22"></span>
+            <h3>Zona rural y ribereña</h3>
+            <p>Puestos de salud de los corregimientos y brigadas fluviales del Buque Hospital «Benkós Biohó».</p>
+            <span class="quick-card__go">Ver cobertura rural <span data-icon="arrow-right" data-icon-size="15"></span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS POPULARES ============ -->
+    <section class="section section--tight" aria-label="Servicios más buscados">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Cobertura del directorio</p>
+          <h2 class="h2">Servicios más buscados</h2>
+          <p class="lead" style="font-size:1.05rem">Disponibilidad real registrada en las instituciones del Distrito.</p>
+        </div>
+        <div class="popular-grid reveal" id="popular-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ DESTACADAS ============ -->
+    <section class="section section--tight" aria-label="Instituciones destacadas">
+      <div class="container">
+        <div class="section-head reveal" style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-6);flex-wrap:wrap;max-width:none">
+          <div>
+            <p class="eyebrow">Red de atención</p>
+            <h2 class="h2">Instituciones destacadas</h2>
+          </div>
+          <a class="btn btn--glass" href="servicios.html">Ver las <span id="stat-total-mini"></span> instituciones <span data-icon="chevron-right" data-icon-size="15"></span></a>
+        </div>
+        <div class="ips-grid" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO FUNCIONA ============ -->
+    <section class="section section--tight" aria-label="Cómo funciona">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Orientación, no agendamiento</p>
+          <h2 class="h2">Cómo funciona</h2>
+          <p class="lead" style="font-size:1.05rem;margin-inline:auto">
+            La plataforma no reemplaza a su EPS ni a las IPS: le indica exactamente a dónde ir,
+            qué llevar y por qué canal oficial pedir la atención.
+          </p>
+        </div>
+        <div class="how-grid">
+          <div class="card how-step reveal" style="--d:0ms">
+            <div class="how-step__num"></div>
+            <h3>Busque su necesidad</h3>
+            <p>Por servicio, institución, zona o tipo de atención. Sin registro ni datos personales.</p>
+          </div>
+          <div class="card how-step reveal" style="--d:80ms">
+            <div class="how-step__num"></div>
+            <h3>Compare información verificada</h3>
+            <p>Horarios en vivo, requisitos, ubicación y fecha de verificación de cada ficha.</p>
+          </div>
+          <div class="card how-step reveal" style="--d:160ms">
+            <div class="how-step__num"></div>
+            <h3>Revise requisitos</h3>
+            <p>Documentos y condiciones para que el desplazamiento no sea en vano.</p>
+          </div>
+          <div class="card how-step reveal" style="--d:240ms">
+            <div class="how-step__num"></div>
+            <h3>Contacte el canal oficial</h3>
+            <p>Teléfono, WhatsApp, web o punto presencial de la institución, en un toque.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ESTADÍSTICAS ============ -->
+    <section class="section section--tight" aria-label="Cobertura de la plataforma">
+      <div class="container">
+        <div class="stats-band reveal">
+          <div class="stat">
+            <div class="stat__num" id="stat-ips">0</div>
+            <div class="stat__label">Instituciones en el directorio</div>
+            <div class="stat__sub">Públicas, privadas y comunitarias</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" id="stat-servicios">0</div>
+            <div class="stat__label">Servicios catalogados</div>
+            <div class="stat__sub">Asistenciales, diagnósticos y administrativos</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" id="stat-urgencias">0</div>
+            <div class="stat__label">Puntos con urgencias 24 h</div>
+            <div class="stat__sub">Atención permanente garantizada</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" id="stat-rural">0</div>
+            <div class="stat__label">Fichas de zona rural e itinerante</div>
+            <div class="stat__sub">Ríos, costa y brigadas fluviales</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AVISOS ============ -->
+    <section class="section section--tight" aria-label="Avisos y novedades">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Novedades del Distrito</p>
+          <h2 class="h2">Avisos y jornadas</h2>
+        </div>
+        <div class="news-list" id="news-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tight" aria-label="Preguntas frecuentes">
+      <div class="container container--sm">
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Transparencia</p>
+          <h2 class="h2">Preguntas frecuentes</h2>
+        </div>
+        <div class="accordion reveal" id="faq-list" data-exclusive="true"></div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="section section--tight" aria-label="Participa">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <p class="eyebrow" style="color:#9fd4e2;justify-content:center">Construcción colectiva</p>
+          <h2 class="h2">¿Representa una institución o encontró un dato desactualizado?</h2>
+          <p>Este prototipo se validará con ciudadanos y entidades del sector. Su reporte mantiene la información viva y confiable.</p>
+          <div class="cta-panel__actions">
+            <a class="btn btn--light btn--lg" href="mailto:contacto@saludbuenaventura.demo?subject=Reporte%20de%20datos%20%C2%B7%20Salud%20Buenaventura">
+              <span data-icon="mail" data-icon-size="16"></span> Reportar o actualizar datos
+            </a>
+            <a class="btn btn--outline-light btn--lg" href="proyecto.html">
+              Conocer el proyecto <span data-icon="arrow-right" data-icon-size="16"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sb-footer"></div>
+
+  <script src="js/core/iconos.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/data/datos.js"></script>
+  <script src="js/core/render.js"></script>
+  <script src="js/core/chrome.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script>
+    document.addEventListener("sb:ready", function () {
+      var mini = document.getElementById("stat-total-mini");
+      if (mini) mini.textContent = window.SBData.ips.length;
+    });
+  </script>
+</body>
+</html>

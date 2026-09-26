@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urgencias y rutas de atención · Salud Buenaventura</title>
+  <meta name="description" content="Líneas de emergencia oficiales, rutas de atención por tipo de urgencia y puntos con servicio 24 horas en Buenaventura.">
+  <meta name="theme-color" content="#F4F8F9">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="urgencias">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__orb ambient__orb--a"></div>
+    <div class="ambient__orb ambient__orb--b"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <div id="sb-header"></div>
+
+  <main id="contenido" class="page-body">
+
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb reveal" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span data-icon="chevron-right" data-icon-size="14"></span>
+          <span aria-current="page">Urgencias</span>
+        </nav>
+        <p class="eyebrow reveal" style="margin-top:var(--sp-5);color:var(--c-danger)">Atención inmediata</p>
+        <h1 class="h1 display reveal" style="--d:60ms;font-size:var(--fs-h1)">Urgencias: a quién llamar y a dónde ir</h1>
+        <p class="lead reveal" style="--d:120ms">
+          Líneas oficiales gratuitas, rutas de actuación por tipo de emergencia y los puntos del
+          Distrito con urgencias las 24 horas.
+        </p>
+
+        <div class="alert alert--danger reveal" style="--d:160ms;margin-top:var(--sp-6)">
+          <span data-icon="alert-triangle" data-icon-size="20"></span>
+          <span>
+            <span class="alert__title">Ante riesgo de vida, llame primero al 123</span>
+            Esta plataforma orienta, pero no despacha ambulancias ni agenda atención de emergencia.
+            En una urgencia vital, cada minuto cuenta: llame y siga las instrucciones del regulador.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Líneas oficiales -->
+    <section class="section section--tight" style="padding-top:0" aria-label="Líneas oficiales">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Líneas oficiales · gratuitas · 24/7</p>
+          <h2 class="h2">Marque, lo atienden</h2>
+        </div>
+        <div class="lines-grid" id="lineas-grid"></div>
+      </div>
+    </section>
+
+    <!-- Rutas de atención -->
+    <section class="section section--tight" aria-label="Rutas de atención">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Rutas de atención</p>
+          <h2 class="h2">Qué hacer mientras llega la ayuda</h2>
+          <p class="lead" style="font-size:1.05rem">
+            Guías rápidas para las emergencias más frecuentes en el Distrito, incluidas las propias
+            del territorio pacífico como el ofidismo y el dengue.
+          </p>
+        </div>
+        <div class="route-grid" id="rutas-list"></div>
+      </div>
+    </section>
+
+    <!-- Puntos 24 h -->
+    <section class="section section--tight" aria-label="Puntos con urgencias 24 horas">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Red permanente</p>
+          <h2 class="h2">Puntos con urgencias 24 horas</h2>
+        </div>
+        <div class="ips-grid" id="puntos-24" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sb-footer"></div>
+
+  <script src="js/core/iconos.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/data/datos.js"></script>
+  <script src="js/core/render.js"></script>
+  <script src="js/core/chrome.js"></script>
+  <script src="js/pages/urgencias.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblia de Diseño · Salud Buenaventura</title>
+  <meta name="description" content="Sistema de diseño de Salud Buenaventura: tokens, glassmorphism, tipografía, componentes, movimiento, accesibilidad y arquitectura.">
+  <meta name="theme-color" content="#F4F8F9">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    /* Piezas exclusivas de la página de sistema de diseño */
+    .motion-track { position: relative; height: 68px; border-radius: var(--r-pill); background: var(--glass-veil-bg); border: var(--glass-veil-border); padding: 12px; overflow: hidden; }
+    .motion-box { width: 44px; height: 44px; border-radius: 13px; background: linear-gradient(150deg, var(--c-brand-500), var(--c-brand-700)); box-shadow: var(--sh-brand), inset 0 1px 0 rgba(255,255,255,0.3); }
+    .shadow-demo { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--sp-5); }
+    .shadow-demo > div { height: 92px; border-radius: var(--r-md); background: rgba(255,255,255,0.8); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11.5px; color: var(--c-ink-2); }
+    .tree { font-family: var(--font-mono); font-size: 12.5px; line-height: 1.9; color: var(--c-ink-2); background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--r-md); padding: var(--sp-6); overflow-x: auto; }
+    .tree b { color: var(--c-brand-700); font-weight: 600; }
+    .tree i { color: var(--c-ink-3); font-style: normal; }
+  </style>
+</head>
+<body data-page="">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__orb ambient__orb--a"></div>
+    <div class="ambient__orb ambient__orb--b"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <div id="sb-header"></div>
+
+  <main id="contenido" class="page-body">
+
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow reveal">Documentación viva · <span id="ds-meta-version">v1.0</span></p>
+        <h1 class="display reveal" style="--d:60ms;font-size:var(--fs-h1)">Biblia de Diseño</h1>
+        <p class="lead reveal" style="--d:120ms;max-width:48rem">
+          El sistema de diseño completo de Salud Buenaventura: decisiones, tokens, recetas y reglas.
+          Todo lo que se construya sobre esta plataforma debe poder rastrearse hasta este documento.
+          Haga clic en cualquier token, color o icono para copiarlo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="ds-layout">
+
+          <!-- Navegación de secciones -->
+          <nav class="ds-nav" aria-label="Secciones de la biblia">
+            <a href="#principios">1 · Principios</a>
+            <a href="#color">2 · Color</a>
+            <a href="#tipografia">3 · Tipografía</a>
+            <a href="#forma">4 · Espacio y forma</a>
+            <a href="#vidrio">5 · Glassmorphism</a>
+            <a href="#movimiento">6 · Movimiento</a>
+            <a href="#iconos">7 · Iconografía</a>
+            <a href="#componentes">8 · Componentes</a>
+            <a href="#reglas">9 · Reglas y anti-patrones</a>
+            <a href="#accesibilidad">10 · Accesibilidad</a>
+            <a href="#arquitectura">11 · Arquitectura</a>
+          </nav>
+
+          <div>
+            <!-- ============ 1 · PRINCIPIOS ============ -->
+            <section class="ds-section" id="principios">
+              <p class="eyebrow">Fundamentos</p>
+              <h2 class="h2">Los diez principios</h2>
+              <p class="lead">Orden de precedencia: en caso de conflicto, el principio de menor número gana.</p>
+              <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-4)">
+                <div class="card reveal"><b>01 · Claridad antes que decoración</b><p class="small muted" style="margin-top:6px">La interfaz existe para que un ciudadano encuentre un servicio. Ningún efecto puede estorbar ese objetivo.</p></div>
+                <div class="card reveal" style="--d:50ms"><b>02 · Un solo protagonista por pantalla</b><p class="small muted" style="margin-top:6px">Cada vista tiene una acción principal (buscar, llamar, consultar). Todo lo demás es soporte.</p></div>
+                <div class="card reveal" style="--d:100ms"><b>03 · Vidrio con jerarquía, nunca decorativo</b><p class="small muted" style="margin-top:6px">Tres niveles de glassmorphism con propósito: chrome, superficie y velo. Nunca vidrio sobre vidrio.</p></div>
+                <div class="card reveal" style="--d:150ms"><b>04 · Un hueco de marca</b><p class="small muted" style="margin-top:6px">Azul-Pacífico como única familia cromática de marca. El color se gasta solo en significado: estados, acciones y énfasis.</p></div>
+                <div class="card reveal" style="--d:200ms"><b>05 · Profundidad sutil, no dramática</b><p class="small muted" style="margin-top:6px">Sombras multicapa al 4–10 % de opacidad, tintadas al hueco de marca. Nada de bordes negros ni halos intensos.</p></div>
+                <div class="card reveal" style="--d:250ms"><b>06 · Movimiento con causa</b><p class="small muted" style="margin-top:6px">Toda animación explica un cambio de estado o guía la atención. Duraciones ≤ 700 ms y respeto absoluto a prefers-reduced-motion.</p></div>
+                <div class="card reveal" style="--d:300ms"><b>07 · Datos vivos</b><p class="small muted" style="margin-top:6px">Estados calculados en tiempo real (abierto/cerrado), no texto estático. La confianza se gana con precisión.</p></div>
+                <div class="card reveal" style="--d:350ms"><b>08 · Ligereza radical</b><p class="small muted" style="margin-top:6px">Cero frameworks, cero fuentes externas, cero peticiones de terceros. Funciona en un gama baja con conectividad irregular.</p></div>
+                <div class="card reveal" style="--d:400ms"><b>09 · Accesibilidad innegociable</b><p class="small muted" style="margin-top:6px">WCAG 2.2 AA: contraste, foco visible, semántica, live regions y tamaño de toque ≥ 44 px.</p></div>
+                <div class="card reveal" style="--d:450ms"><b>10 · Honestidad del dato</b><p class="small muted" style="margin-top:6px">Cada ficha declara su origen, estado de verificación y fecha. Un dato viejo señalado es mejor que un dato falso.</p></div>
+              </div>
+            </section>
+
+            <!-- ============ 2 · COLOR ============ -->
+            <section class="ds-section" id="color">
+              <p class="eyebrow">Identidad</p>
+              <h2 class="h2">Color</h2>
+              <p class="lead">
+                Paleta Azul-Pacífico: evoca el océano y la confianza institucional sanitaria.
+                Un acento arena de uso esporádico y semánticos estrictos para estados.
+                Todos los pares texto/fondo cumplen contraste AA (verificados en §10).
+              </p>
+              <div id="ds-paletas"></div>
+              <div class="alert alert--info">
+                <span data-icon="info" data-icon-size="20"></span>
+                <span><span class="alert__title">Regla del 60-30-10</span>
+                60 % neutros (fondos y superficies), 30 % tinta (texto), 10 % color de marca y semánticos.
+                Si una pantalla se siente «de colores», sobra marca.</span>
+              </div>
+            </section>
+
+            <!-- ============ 3 · TIPOGRAFÍA ============ -->
+            <section class="ds-section" id="tipografia">
+              <p class="eyebrow">Identidad</p>
+              <h2 class="h2">Tipografía</h2>
+              <p class="lead">
+                Stack nativo de plataforma (SF Pro / Segoe / Roboto): cero descargas, kerning óptimo y
+                sensación «de sistema operativo». Cuerpo a 17 px — el tamaño de lectura de Apple — con
+                interlineado 1.58 para audiencia amplia. Titulares con tracking negativo progresivo.
+              </p>
+              <div class="card">
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-display<br>clamp(41.6→64px) · 700 · −0.03em</div>
+                  <div class="display" style="font-size:clamp(2rem,4vw,3rem)">Toda la salud, un lugar.</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-h1<br>32→46px · 700 · −0.018em</div>
+                  <div class="h1">Encuentre su servicio</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-h2 · 26→37px · 700</div>
+                  <div class="h2">Horarios verificados</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-h3 · 21.6px · 620</div>
+                  <div class="h3">Requisitos claros antes de salir</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-lead · 19.2px · 400 · 1.58</div>
+                  <div class="lead">La orientación reduce desplazamientos innecesarios y descongestiona los puntos de atención física.</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-body · 17px · 400 · 1.58</div>
+                  <div>Cuerpo de texto: el tamaño óptimo para lectura sostenida en cualquier dispositivo, con tabular nums en datos.</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-sm · 15px / --fs-xs · 13px</div>
+                  <div class="small muted">Secundario y metadatos. Nunca por debajo de 12 px en contenido legible.</div>
+                </div>
+                <div class="type-row">
+                  <div class="type-row__meta">--fs-eyebrow · 12px · 620 · +0.09em · MAYÚS</div>
+                  <div class="eyebrow" style="margin:0">Etiqueta de sección</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ============ 4 · ESPACIO Y FORMA ============ -->
+            <section class="ds-section" id="forma">
+              <p class="eyebrow">Fundamentos</p>
+              <h2 class="h2">Espacio, forma y profundidad</h2>
+              <p class="lead">
+                Rejilla de espaciado en múltiplos de 4 px, radios generosos (10→28 px) y sombras
+                multicapa tintadas al hueco de marca. Haga clic en un token para copiarlo.
+              </p>
+              <div id="ds-tokens"></div>
+
+              <h3 class="ds-sub">Sombras</h3>
+              <div class="shadow-demo">
+                <div style="box-shadow:var(--sh-xs)">--sh-xs</div>
+                <div style="box-shadow:var(--sh-sm)">--sh-sm</div>
+                <div style="box-shadow:var(--sh-md)">--sh-md</div>
+                <div style="box-shadow:var(--sh-lg)">--sh-lg</div>
+                <div style="box-shadow:var(--sh-brand);color:#fff;background:linear-gradient(180deg,#1a7ea0,var(--c-brand-700))">--sh-brand</div>
+              </div>
+
+              <h3 class="ds-sub">Rejilla de espaciado</h3>
+              <div class="card">
+                <div style="display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap">
+                  <div style="width:16px;height:4px;background:var(--c-brand-300);border-radius:2px" title="sp-1 · 4px"></div>
+                  <div style="width:16px;height:8px;background:var(--c-brand-300);border-radius:2px" title="sp-2 · 8px"></div>
+                  <div style="width:16px;height:12px;background:var(--c-brand-400);border-radius:2px" title="sp-3 · 12px"></div>
+                  <div style="width:16px;height:16px;background:var(--c-brand-400);border-radius:2px" title="sp-4 · 16px"></div>
+                  <div style="width:16px;height:24px;background:var(--c-brand-500);border-radius:2px" title="sp-6 · 24px"></div>
+                  <div style="width:16px;height:32px;background:var(--c-brand-500);border-radius:2px" title="sp-8 · 32px"></div>
+                  <div style="width:16px;height:48px;background:var(--c-brand-600);border-radius:2px" title="sp-12 · 48px"></div>
+                  <div style="width:16px;height:64px;background:var(--c-brand-600);border-radius:2px" title="sp-16 · 64px"></div>
+                  <div style="width:16px;height:96px;background:var(--c-brand-700);border-radius:2px" title="sp-24 · 96px"></div>
+                </div>
+                <p class="tiny" style="margin-top:var(--sp-4)">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 px — nunca valores intermedios arbitrarios.</p>
+              </div>
+            </section>
+
+            <!-- ============ 5 · GLASSMORPHISM ============ -->
+            <section class="ds-section" id="vidrio">
+              <p class="eyebrow">Lenguaje visual</p>
+              <h2 class="h2">Glassmorphism de tres niveles</h2>
+              <p class="lead">
+                El vidrio comunica jerarquía, no decoración. Cada nivel tiene una receta fija:
+                translucidez, blur + saturación, borde blanco y highlight especular superior.
+                Solo funciona sobre el fondo ambiental por capas — nunca sobre otro vidrio.
+              </p>
+
+              <div class="glass-demo" aria-label="Demostración de niveles de vidrio">
+                <div class="glass-demo__item glass--chrome"><b>Nivel 1 · Chrome</b><span>blur(22px) saturate(185%) · navbar y barras sticky · fondo al 66–82 %.</span></div>
+                <div class="glass-demo__item glass"><b>Nivel 2 · Superficie</b><span>blur(18px) saturate(170%) · tarjetas, paneles y modales · fondo al 52–72 %.</span></div>
+                <div class="glass-demo__item glass--veil"><b>Nivel 3 · Velo</b><span>blur(10px) saturate(140%) · chips, filas y celdas internas · fondo al 42 %.</span></div>
+              </div>
+
+              <h3 class="ds-sub">Receta canónica (CSS)</h3>
+              <div class="code-block">
+                <button class="icon-btn icon-btn--sm code-block__copy" data-copy-code="#code-vidrio" aria-label="Copiar código"><span data-icon="copy" data-icon-size="15"></span></button>
+                <pre id="code-vidrio"><code><span class="cm">/* Superficie de vidrio · nivel tarjeta */</span>
+.<span class="cp">glass</span> {
+  <span class="cp">background</span>: <span class="cv">linear-gradient(158deg, rgba(255,255,255,.72), rgba(255,255,255,.52))</span>;
+  <span class="cp">backdrop-filter</span>: <span class="cv">blur(18px) saturate(170%)</span>;
+  <span class="cp">border</span>: <span class="cv">1px solid rgba(255,255,255,.68)</span>;
+  <span class="cp">box-shadow</span>:
+    <span class="cv">0 1px 2px rgba(10,43,54,.03)</span>,      <span class="cm">/* contacto  */</span>
+    <span class="cv">0 8px 20px rgba(10,43,54,.06)</span>,     <span class="cm">/* cercanía  */</span>
+    <span class="cv">0 24px 48px rgba(10,43,54,.06)</span>,    <span class="cm">/* ambiente  */</span>
+    <span class="cv">inset 0 1px 0 rgba(255,255,255,.85)</span>; <span class="cm">/* specular */</span>
+}</code></pre>
+              </div>
+
+              <h3 class="ds-sub">Las cinco leyes del vidrio</h3>
+              <ul class="checklist">
+                <li><span data-icon="check-circle" data-icon-size="17"></span><span><b>Saturación ≥ 160 %:</b> sin ella, el blur se ve gris y sucio. La saturación devuelve el color del fondo.</span></li>
+                <li><span data-icon="check-circle" data-icon-size="17"></span><span><b>Borde siempre blanco translúcido</b> (55–85 %), nunca gris: simula el canto pulido del cristal.</span></li>
+                <li><span data-icon="check-circle" data-icon-size="17"></span><span><b>Highlight especular:</b> inset 0 1px 0 blanco en el borde superior. Es el 50 % del realismo.</span></li>
+                <li><span data-icon="check-circle" data-icon-size="17"></span><span><b>Texto siempre sólido:</b> el contenido sobre vidrio usa tinta plena (≥ 4.5:1); jamás texto translúcido sobre vidrio.</span></li>
+                <li><span data-icon="check-circle" data-icon-size="17"></span><span><b>Presupuesto de blur:</b> máximo 4–6 elementos con backdrop-filter visibles por pantalla; en móvil, el chrome puede degradar a fondo sólido al hacer scroll rápido.</span></li>
+              </ul>
+            </section>
+
+            <!-- ============ 6 · MOVIMIENTO ============ -->
+            <section class="ds-section" id="movimiento">
+              <p class="eyebrow">Lenguaje visual</p>
+              <h2 class="h2">Movimiento</h2>
+              <p class="lead">
+                Una curva firma para todo el sistema — expo-out suavizada — más una spring discreta
+                para aperturas. Pulse cada curva para verla en acción sobre la misma pista.
+              </p>
+              <div class="card">
+                <div style="display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-bottom:var(--sp-5)">
+                  <button class="chip is-active" data-motion="cubic-bezier(0.22, 1, 0.36, 1)">--ease-out · firma</button>
+                  <button class="chip" data-motion="cubic-bezier(0.34, 1.32, 0.64, 1)">--ease-spring</button>
+                  <button class="chip" data-motion="cubic-bezier(0.65, 0, 0.35, 1)">--ease-in-out</button>
+                  <button class="chip" data-motion="linear">linear (control)</button>
+                </div>
+                <div class="motion-track"><div class="motion-box" id="motion-box"></div></div>
+                <div class="table-wrap" style="margin-top:var(--sp-5)">
+                  <table class="table">
+                    <thead><tr><th>Token</th><th>Duración</th><th>Uso</th></tr></thead>
+                    <tbody>
+                      <tr><td><code>--dur-1</code></td><td>140 ms</td><td>Micro: hover, press, foco</td></tr>
+                      <tr><td><code>--dur-2</code></td><td>240 ms</td><td>Componentes: chips, toggles, navbar</td></tr>
+                      <tr><td><code>--dur-3</code></td><td>420 ms</td><td>Revelados, acordeones, hojas</td></tr>
+                      <tr><td><code>--dur-4</code></td><td>700 ms</td><td>Escena: hero y secciones (una sola vez)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="tiny" style="margin-top:var(--sp-4)">
+                  Revelado por scroll: 18 px de elevación + fade, stagger de 60–90 ms, máximo ~5 elementos por grupo.
+                  Todo se desactiva con <code>prefers-reduced-motion: reduce</code>.
+                </p>
+              </div>
+            </section>
+
+            <!-- ============ 7 · ICONOGRAFÍA ============ -->
+            <section class="ds-section" id="iconos">
+              <p class="eyebrow">Lenguaje visual</p>
+              <h2 class="h2">Iconografía</h2>
+              <p class="lead">
+                Set propio de <span id="icon-count"></span> iconos lineales: rejilla 24×24, trazo 1.8,
+                terminales redondeadas, un solo peso. Clic para copiar el uso en JS.
+              </p>
+              <div class="icon-gallery" id="ds-iconos"></div>
+            </section>
+
+            <!-- ============ 8 · COMPONENTES ============ -->
+            <section class="ds-section" id="componentes">
+              <p class="eyebrow">Biblioteca</p>
+              <h2 class="h2">Componentes</h2>
+              <p class="lead">Muestras vivas del inventario completo. Cada componente vive en <code>css/components.css</code> con su receta documentada.</p>
+
+              <h3 class="ds-sub">Botones</h3>
+              <div class="card" style="display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center">
+                <button class="btn btn--primary">Primario</button>
+                <button class="btn btn--glass">Secundario (vidrio)</button>
+                <button class="btn btn--ghost">Terciario</button>
+                <button class="btn btn--danger">Urgencia</button>
+                <button class="btn btn--danger-soft btn--sm">Urgencia suave</button>
+                <button class="btn btn--dark btn--sm">Oscuro</button>
+                <button class="btn btn--primary" disabled>Desactivado</button>
+                <button class="icon-btn" aria-label="Ejemplo de botón icono"><span data-icon="copy" data-icon-size="18"></span></button>
+              </div>
+
+              <h3 class="ds-sub">Badges y estados</h3>
+              <div class="card" style="display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center">
+                <span class="badge badge--ok"><span class="dot dot--ok"></span> Abierto · cierra 16:00</span>
+                <span class="badge badge--neutral"><span class="dot dot--closed"></span> Cerrado · abre mañana 07:00</span>
+                <span class="badge badge--danger"><span class="dot dot--24"></span> Urgencias 24 h</span>
+                <span class="badge badge--info">Punto EPS</span>
+                <span class="badge badge--warn">Por verificar</span>
+              </div>
+
+              <h3 class="ds-sub">Chips de filtro</h3>
+              <div class="card" style="display:flex;gap:var(--sp-2);flex-wrap:wrap">
+                <button class="chip is-active">Activo</button>
+                <button class="chip">Reposo</button>
+                <button class="chip chip--danger is-active">Urgencias 24 h</button>
+                <button class="chip">Vacunación</button>
+              </div>
+
+              <h3 class="ds-sub">Formularios</h3>
+              <div class="card" style="display:grid;gap:var(--sp-4);max-width:480px">
+                <div class="searchbar">
+                  <span class="searchbar__icon" data-icon="search" data-icon-size="18"></span>
+                  <label class="sr-only" for="ds-demo-q">Búsqueda de ejemplo</label>
+                  <input id="ds-demo-q" type="search" placeholder="Command bar (searchbar)">
+                  <kbd>/</kbd>
+                  <button class="btn btn--primary btn--sm">Buscar</button>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="ds-demo-s">Select nativo estilizado</label>
+                  <select class="select" id="ds-demo-s"><option>Todos los tipos</option><option>Hospital público</option></select>
+                </div>
+              </div>
+
+              <h3 class="ds-sub">Alertas</h3>
+              <div class="card" style="display:grid;gap:var(--sp-3)">
+                <div class="alert alert--danger"><span data-icon="alert-triangle" data-icon-size="20"></span><span><span class="alert__title">Urgencia vital</span>Llame primero al 123. Esta plataforma no despacha ambulancias.</span></div>
+                <div class="alert alert--warn"><span data-icon="alert-triangle" data-icon-size="20"></span><span><span class="alert__title">Dato por verificar</span>Ficha ilustrativa del prototipo; confirme en canales oficiales.</span></div>
+                <div class="alert alert--info"><span data-icon="info" data-icon-size="20"></span><span><span class="alert__title">Orientación</span>La plataforma no agenda: lo dirige al canal oficial correcto.</span></div>
+              </div>
+
+              <h3 class="ds-sub">Acordeón</h3>
+              <div class="accordion" data-exclusive="true" style="max-width:640px">
+                <div class="acc-item">
+                  <button class="acc-trigger" aria-expanded="false">Elemento colapsado<span class="acc-trigger__chev"><span data-icon="chevron-down" data-icon-size="18"></span></span></button>
+                  <div class="acc-panel" role="region"><div class="acc-panel__inner"><div class="acc-panel__content">Apertura con grid-template-rows 0fr→1fr: altura automática sin JavaScript de medición y sin saltos.</div></div></div>
+                </div>
+                <div class="acc-item is-open">
+                  <button class="acc-trigger" aria-expanded="true">Elemento abierto<span class="acc-trigger__chev"><span data-icon="chevron-down" data-icon-size="18"></span></span></button>
+                  <div class="acc-panel" role="region"><div class="acc-panel__inner"><div class="acc-panel__content">El chevrón rota 180° con la misma curva y duración del panel (420 ms).</div></div></div>
+                </div>
+              </div>
+
+              <h3 class="ds-sub">Tarjeta de institución (pieza central del producto)</h3>
+              <div class="ips-grid" style="grid-template-columns:1fr;max-width:420px" id="ds-card-demo"></div>
+            </section>
+
+            <!-- ============ 9 · REGLAS ============ -->
+            <section class="ds-section" id="reglas">
+              <p class="eyebrow">Criterio</p>
+              <h2 class="h2">Reglas y anti-patrones</h2>
+              <p class="lead">Lo que distingue un glassmorphism enterprise de uno genérico.</p>
+              <div class="dodont">
+                <div class="dodont__col dodont__col--do">
+                  <h4><span data-icon="check-circle" data-icon-size="16"></span> Sí</h4>
+                  <ul>
+                    <li>Fondo ambiental con capas para que el blur tenga algo que revelar.</li>
+                    <li>Bordes blancos translúcidos y highlight especular superior.</li>
+                    <li>Sombras multicapa tintadas al hueco de marca, 3–10 % de opacidad.</li>
+                    <li>Un color de marca; el resto del color es semántico.</li>
+                    <li>Movimiento breve con curva única y stagger moderado.</li>
+                    <li>Grano al 3–4 % para eliminar banding del blur.</li>
+                    <li>Estados reales: hover, focus-visible, active, disabled, vacío y error.</li>
+                  </ul>
+                </div>
+                <div class="dodont__col dodont__col--dont">
+                  <h4><span data-icon="x" data-icon-size="16"></span> Nunca</h4>
+                  <ul>
+                    <li>Neones, glows intensos o degradados multicolor saturados.</li>
+                    <li>Vidrio sobre vidrio (jerarquía ilegible y coste de render).</li>
+                    <li>Texto de bajo contraste sobre superficies translúcidas.</li>
+                    <li>Blur en todos los paneles «porque sí»: el vidrio jerarquiza, no decora.</li>
+                    <li>Animaciones decorativas en bucle cerca del contenido de lectura.</li>
+                    <li>Radios inconsistentes (mezclar 8/12/24 px sin regla).</li>
+                    <li>Dependencias externas: fuentes, iconos o librerías de CDN.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- ============ 10 · ACCESIBILIDAD ============ -->
+            <section class="ds-section" id="accesibilidad">
+              <p class="eyebrow">Inclusión</p>
+              <h2 class="h2">Accesibilidad (WCAG 2.2 AA)</h2>
+              <p class="lead">La población objetivo incluye personas con baja alfabetización digital y conectividad limitada: la accesibilidad no es un extra, es el producto.</p>
+              <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--sp-4)">
+                <div class="card">
+                  <h3 class="h3" style="font-size:1rem;margin-bottom:var(--sp-3)">Contraste verificado</h3>
+                  <div class="table-wrap">
+                    <table class="table">
+                      <tbody>
+                        <tr><td>Tinta sobre papel</td><td><b>15.2 : 1</b> ✓ AAA</td></tr>
+                        <tr><td>Secundaria sobre papel</td><td><b>6.1 : 1</b> ✓ AA</td></tr>
+                        <tr><td>Blanco sobre --c-brand-600</td><td><b>5.6 : 1</b> ✓ AA</td></tr>
+                        <tr><td>--c-ok sobre --c-ok-bg</td><td><b>4.9 : 1</b> ✓ AA</td></tr>
+                        <tr><td>--c-danger sobre --c-danger-bg</td><td><b>5.1 : 1</b> ✓ AA</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card">
+                  <h3 class="h3" style="font-size:1rem;margin-bottom:var(--sp-3)">Checklist implementado</h3>
+                  <ul class="checklist">
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> Skip-link y navegación por teclado completa.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> <code>:focus-visible</code> con anillo doble (blanco + marca).</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> Landmarks semánticos, jerarquía de encabezados única.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> <code>aria-live</code> en conteo de resultados y toasts.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> <code>aria-expanded</code>/<code>aria-controls</code> en acordeones y menú.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> Iconos <code>aria-hidden</code>; las acciones dicen qué hacen.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> Objetivos táctiles ≥ 44×44 px; texto base 17 px.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> <code>prefers-reduced-motion</code> desactiva todo movimiento.</li>
+                    <li><span data-icon="check-circle" data-icon-size="17"></span> Fallback sin <code>backdrop-filter</code>: superficies sólidas.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- ============ 11 · ARQUITECTURA ============ -->
+            <section class="ds-section" id="arquitectura">
+              <p class="eyebrow">Ingeniería</p>
+              <h2 class="h2">Arquitectura del proyecto</h2>
+              <p class="lead">
+                HTML semántico + CSS en capas (tokens → base → componentes → páginas) + JavaScript
+                vanilla modular. Sin build obligatorio: se abre con doble clic o cualquier servidor estático.
+              </p>
+              <div class="tree">
+<b>salud-buenaventura/</b>
+├── <b>index.html</b>              <i>· home: búsqueda, SOS, destacados, FAQ</i>
+├── <b>servicios.html</b>          <i>· directorio con filtros y URL sync</i>
+├── <b>detalle.html</b>            <i>· ficha de institución (?id=)</i>
+├── <b>tramites.html</b>           <i>· guías paso a paso</i>
+├── <b>urgencias.html</b>          <i>· líneas, rutas y puntos 24 h</i>
+├── <b>proyecto.html</b>           <i>· formulación, metodología y datos</i>
+├── <b>sistema-de-diseno.html</b>  <i>· esta biblia interactiva</i>
+├── <b>css/</b>
+│   ├── tokens.css          <i>· fuente única de verdad (0 reglas visuales)</i>
+│   ├── base.css            <i>· reset, fondo ambiental, tipografía</i>
+│   ├── components.css      <i>· biblioteca de componentes</i>
+│   └── pages.css           <i>· estilos exclusivos por página</i>
+├── <b>js/</b>
+│   ├── data/datos.js       <i>· directorio centralizado (mock de API)</i>
+│   ├── core/iconos.js      <i>· set SVG propio</i>
+│   ├── core/utils.js       <i>· DOM, horarios en vivo, toast, URL</i>
+│   ├── core/render.js      <i>· marcadores compartidos de fichas</i>
+│   ├── core/chrome.js      <i>· header/footer inyectados (DRY)</i>
+│   └── pages/*.js          <i>· un controlador por página</i>
+├── <b>docs/</b>BIBLIA.md · AGENTES.md
+├── <b>skills/</b>               <i>· conocimiento de diseño reutilizable</i>
+└── <b>tools/</b>                <i>· validación de datos, scaffolding, QA de enlaces</i>
+              </div>
+
+              <h3 class="ds-sub">Flujo de datos</h3>
+              <div class="card">
+                <ol class="mini-steps">
+                  <li><span><b>datos.js expone window.SBData</b><span>Modelo central: ips, servicios, trámites, líneas, rutas y avisos. En producción se sustituye por fetch a una API manteniendo el mismo contrato.</span></span></li>
+                  <li><span><b>chrome.js hidrata la página</b><span>Inyecta header/footer, marca el enlace activo, hidrata iconos estáticos y dispara el evento <code>sb:ready</code>.</span></span></li>
+                  <li><span><b>El controlador de página escucha sb:ready</b><span>Lee parámetros de URL, filtra SBData y renderiza con SBRender (fichas) o plantillas locales.</span></span></li>
+                  <li><span><b>El estado vive en la URL</b><span>q, tipo, zona, serv, urg y ver se sincronizan con history.replaceState: toda vista filtrada es compartible y recargable.</span></span></li>
+                </ol>
+              </div>
+
+              <h3 class="ds-sub">Presupuesto de rendimiento</h3>
+              <div class="card">
+                <div class="table-wrap">
+                  <table class="table">
+                    <thead><tr><th>Recurso</th><th>Presupuesto</th><th>Estado</th></tr></thead>
+                    <tbody>
+                      <tr><td>Peticiones externas (CDN, fuentes, analytics)</td><td>0</td><td><span class="badge badge--ok">Cumplido</span></td></tr>
+                      <tr><td>CSS total (4 archivos, sin minificar)</td><td>&lt; 90 KB</td><td><span class="badge badge--ok">Cumplido</span></td></tr>
+                      <tr><td>JS total (core + datos + páginas)</td><td>&lt; 120 KB</td><td><span class="badge badge--ok">Cumplido</span></td></tr>
+                      <tr><td>Elementos con backdrop-filter por viewport</td><td>≤ 6</td><td><span class="badge badge--ok">Cumplido</span></td></tr>
+                      <tr><td>Lighthouse Accessibility</td><td>≥ 95</td><td><span class="badge badge--info">A validar en CI</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sb-footer"></div>
+
+  <script src="js/core/iconos.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/data/datos.js"></script>
+  <script src="js/core/render.js"></script>
+  <script src="js/core/chrome.js"></script>
+  <script src="js/pages/sistema.js"></script>
+  <script>
+    document.addEventListener("sb:ready", function () {
+      var n = document.getElementById("icon-count");
+      if (n) n.textContent = window.SBIcons.iconNames().length;
+      var demo = document.getElementById("ds-card-demo");
+      if (demo && window.SBData.ips[0]) {
+        demo.innerHTML = window.SBRender.ipsCardHTML(window.SBData.ips[0]);
+        demo.querySelector(".reveal")?.classList.add("is-visible");
+      }
+    });
+  </script>
+</body>
+</html>

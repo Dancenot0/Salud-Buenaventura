@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio de servicios de salud · Salud Buenaventura</title>
+  <meta name="description" content="Busque y filtre instituciones de salud en Buenaventura: hospitales, puestos de salud, puntos EPS, laboratorios. Horarios, requisitos y canales oficiales.">
+  <meta name="theme-color" content="#F4F8F9">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="directorio">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__orb ambient__orb--a"></div>
+    <div class="ambient__orb ambient__orb--b"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <div id="sb-header"></div>
+
+  <main id="contenido" class="page-body">
+
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb reveal" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span data-icon="chevron-right" data-icon-size="14"></span>
+          <span aria-current="page">Directorio</span>
+        </nav>
+        <p class="eyebrow reveal" style="margin-top:var(--sp-5)">Red de atención del Distrito</p>
+        <h1 class="h1 display reveal" style="--d:60ms;font-size:var(--fs-h1)">Directorio de servicios de salud</h1>
+        <p class="lead reveal" style="--d:120ms">
+          Hospitales, centros y puestos de salud, puntos EPS, laboratorios y unidades móviles.
+          Cada ficha indica horarios, requisitos, ubicación y canales oficiales, con su fecha de verificación.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight" style="padding-top:0">
+      <div class="container">
+
+        <!-- Barra de herramientas sticky -->
+        <div class="toolbar reveal" role="search" aria-label="Filtros del directorio">
+          <div class="toolbar__row">
+            <div class="searchbar">
+              <span class="searchbar__icon" data-icon="search" data-icon-size="18"></span>
+              <label class="sr-only" for="f-q">Buscar en el directorio</label>
+              <input id="f-q" data-search-main type="search" placeholder="Buscar por nombre, servicio o barrio…" autocomplete="off">
+            </div>
+            <label class="sr-only" for="f-tipo">Tipo de institución</label>
+            <select class="select" id="f-tipo"></select>
+            <label class="sr-only" for="f-zona">Zona</label>
+            <select class="select" id="f-zona"></select>
+            <button class="btn btn--glass btn--sm" id="btn-limpiar" title="Limpiar todos los filtros">
+              <span data-icon="x" data-icon-size="14"></span> Limpiar
+            </button>
+          </div>
+          <div class="toolbar__chips">
+            <button class="chip chip--danger" data-chip="urg"><span data-icon="siren" data-icon-size="15"></span> Urgencias 24 h</button>
+            <button class="chip" data-chip="ver"><span data-icon="check-circle" data-icon-size="15"></span> Solo verificados</button>
+            <span style="width:1px;height:24px;background:var(--c-line);margin-inline:var(--sp-2)" aria-hidden="true"></span>
+            <button class="chip" data-serv="vacunacion"><span data-icon="syringe" data-icon-size="15"></span> Vacunación</button>
+            <button class="chip" data-serv="laboratorio"><span data-icon="microscope" data-icon-size="15"></span> Laboratorio</button>
+            <button class="chip" data-serv="odontologia"><span data-icon="tooth" data-icon-size="15"></span> Odontología</button>
+            <button class="chip" data-serv="salud-mental"><span data-icon="brain" data-icon-size="15"></span> Salud mental</button>
+            <button class="chip" data-serv="materna"><span data-icon="heart-pulse" data-icon-size="15"></span> Materna</button>
+            <button class="chip" data-serv="afiliacion-eps"><span data-icon="clipboard-list" data-icon-size="15"></span> Trámites EPS</button>
+          </div>
+        </div>
+
+        <!-- Conteo de resultados (región viva para lectores de pantalla) -->
+        <div class="toolbar__meta" style="margin-bottom:var(--sp-5)">
+          <p class="result-count" id="result-count" aria-live="polite"></p>
+          <div class="sort-wrap">
+            <label class="tiny" for="f-sort">Ordenar por</label>
+            <select class="select" id="f-sort">
+              <option value="relevancia">Relevancia</option>
+              <option value="nombre">Nombre (A–Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="ips-grid" id="resultados"></div>
+
+        <p class="tiny reveal" style="margin-top:var(--sp-8);text-align:center">
+          <span data-icon="info" data-icon-size="13" style="vertical-align:-2px"></span>
+          Prototipo con datos ilustrativos en fichas «Por verificar». Confirme en los canales oficiales antes de desplazarse.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="sb-footer"></div>
+
+  <script src="js/core/iconos.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/data/datos.js"></script>
+  <script src="js/core/render.js"></script>
+  <script src="js/core/chrome.js"></script>
+  <script src="js/pages/servicios.js"></script>
+</body>
+</html>

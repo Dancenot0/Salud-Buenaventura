@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El proyecto · Salud Buenaventura</title>
+  <meta name="description" content="Formulación del prototipo de plataforma digital para la centralización, orientación y gestión de la información de servicios de salud en Buenaventura.">
+  <meta name="theme-color" content="#F4F8F9">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="proyecto">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__orb ambient__orb--a"></div>
+    <div class="ambient__orb ambient__orb--b"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <div id="sb-header"></div>
+
+  <main id="contenido" class="page-body">
+
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb reveal" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span data-icon="chevron-right" data-icon-size="14"></span>
+          <span aria-current="page">El proyecto</span>
+        </nav>
+        <p class="eyebrow reveal" style="margin-top:var(--sp-5)">Formulación y desarrollo · 2026</p>
+        <h1 class="h1 display reveal" style="--d:60ms;font-size:var(--fs-h1)">
+          Un prototipo para cerrar la brecha de información en salud
+        </h1>
+        <p class="lead reveal" style="--d:120ms">
+          Formulación y desarrollo de una plataforma digital para la centralización, orientación y
+          gestión de la información de los servicios de salud del Distrito de Buenaventura,
+          Valle del Cauca (Colombia).
+        </p>
+      </div>
+    </section>
+
+    <!-- Problema y justificación -->
+    <section class="section section--tight" style="padding-top:0" aria-label="Problema y justificación">
+      <div class="container">
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:var(--sp-6)" id="problema-grid">
+          <div class="card reveal">
+            <span class="tile tile--danger" data-icon="alert-triangle" data-icon-size="22"></span>
+            <h2 class="h3" style="margin-block:var(--sp-4) var(--sp-3)">El problema</h2>
+            <p class="small muted" style="line-height:var(--lh-loose)">
+              En Buenaventura, la ciudadanía enfrenta barreras de acceso que no siempre derivan de la
+              ausencia de servicios, sino de la <b style="color:var(--c-ink)">falta de información clara y centralizada</b>:
+              horarios, requisitos, ubicaciones y rutas de atención dispersas obligan a desplazamientos
+              innecesarios, saturan los puntos físicos y profundizan la inequidad para quienes tienen
+              menor conectividad o alfabetización digital.
+            </p>
+          </div>
+          <div class="card reveal" style="--d:100ms">
+            <span class="tile tile--ok" data-icon="shield-check" data-icon-size="22"></span>
+            <h2 class="h3" style="margin-block:var(--sp-4) var(--sp-3)">La propuesta</h2>
+            <p class="small muted" style="line-height:var(--lh-loose)">
+              Un canal de <b style="color:var(--c-ink)">orientación ciudadana</b> —no un sustituto de los sistemas
+              institucionales— que reduce la incertidumbre, promueve el acceso oportuno y apoya la
+              eficiencia operativa de las entidades, alineado con las políticas nacionales de
+              transformación digital del sector salud.
+            </p>
+          </div>
+        </div>
+        <style>@media (max-width:820px){ #problema-grid { grid-template-columns:1fr !important; } }</style>
+      </div>
+    </section>
+
+    <!-- Objetivos y meta -->
+    <section class="section section--tight" aria-label="Objetivos">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Objetivos</p>
+          <h2 class="h2">Qué se propuso y qué se entregará</h2>
+        </div>
+        <div class="card reveal" style="margin-bottom:var(--sp-5);border-left:3px solid var(--c-brand-500)">
+          <h3 class="h3" style="font-size:1.05rem;margin-bottom:var(--sp-2)">Objetivo general</h3>
+          <p class="small muted">
+            Diseñar y desarrollar un prototipo funcional de plataforma digital de orientación e información
+            centralizada sobre los servicios de salud disponibles en Buenaventura, fundamentado en el análisis
+            previo de las necesidades de los ciudadanos.
+          </p>
+        </div>
+        <div class="obj-grid">
+          <div class="card reveal" style="--d:60ms"><div class="step"><span class="step__num"></span><div><h3>Diagnosticar</h3><p>Levantar barreras de información y requerimientos de los usuarios mediante encuestas y entrevistas en el Distrito.</p></div></div></div>
+          <div class="card reveal" style="--d:120ms"><div class="step"><span class="step__num"></span><div><h3>Definir</h3><p>Arquitectura de información y requerimientos funcionales y no funcionales, basados en los hallazgos de campo.</p></div></div></div>
+          <div class="card reveal" style="--d:180ms"><div class="step"><span class="step__num"></span><div><h3>Construir</h3><p>Prototipo interactivo web/móvil con catálogo centralizado: servicios, horarios, requisitos, ubicaciones y canales.</p></div></div></div>
+          <div class="card reveal" style="--d:240ms"><div class="step"><span class="step__num"></span><div><h3>Validar</h3><p>Pruebas de usabilidad y pertinencia con una muestra de usuarios finales del territorio.</p></div></div></div>
+        </div>
+        <div class="stats-band reveal" style="margin-top:var(--sp-6);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <div class="stat">
+            <div class="stat__num" data-count="80" data-suffix=" %">0</div>
+            <div class="stat__label">De la oferta de servicios centralizada</div>
+            <div class="stat__sub">Meta del producto mínimo viable</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="80" data-suffix=" %">0</div>
+            <div class="stat__label">Satisfacción de usabilidad objetivo</div>
+            <div class="stat__sub">En pruebas con usuarios finales</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="12" data-suffix=" sem">0</div>
+            <div class="stat__label">Periodo de ejecución</div>
+            <div class="stat__sub">Metodología híbrida por fases y sprints</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodología -->
+    <section class="section section--tight" id="metodologia" aria-label="Metodología y cronograma">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Metodología híbrida · Ágil + Tradicional</p>
+          <h2 class="h2">Cuatro fases, doce semanas</h2>
+          <p class="lead" style="font-size:1.05rem">
+            Planificación predictiva para el alcance y los hitos; sprints iterativos con historias de
+            usuario, revisiones y retrospectivas para el diseño y la implementación.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="card timeline__item reveal">
+            <p class="timeline__phase">Fase 1 · Investigación y levantamiento</p>
+            <h3>Diagnóstico con la ciudadanía</h3>
+            <p>Diseño y aplicación de encuestas y entrevistas. Consolidación del directorio base de servicios de salud del Distrito y definición del modelo de datos.</p>
+            <span class="timeline__when"><span data-icon="calendar" data-icon-size="13"></span> Mes 1 · Semanas 1–4</span>
+          </div>
+          <div class="card timeline__item reveal" style="--d:80ms">
+            <p class="timeline__phase">Fase 2 · Análisis y requerimientos</p>
+            <h3>Arquitectura de la información</h3>
+            <p>Historias de usuario, diagramas de casos de uso y de base de datos, requerimientos funcionales y no funcionales, y criterios de aceptación.</p>
+            <span class="timeline__when"><span data-icon="calendar" data-icon-size="13"></span> Mes 2 · Semanas 5–6</span>
+          </div>
+          <div class="card timeline__item reveal" style="--d:160ms">
+            <p class="timeline__phase">Fase 3 · Diseño e implementación</p>
+            <h3>Construcción por sprints</h3>
+            <p>Interfaces (wireframes y UI sobre el sistema de diseño propio) y programación del prototipo funcional en iteraciones cortas con revisiones frecuentes.</p>
+            <span class="timeline__when"><span data-icon="calendar" data-icon-size="13"></span> Meses 2–3 · Semanas 7–10</span>
+          </div>
+          <div class="card timeline__item reveal" style="--d:240ms">
+            <p class="timeline__phase">Fase 4 · Pruebas y sustentación</p>
+            <h3>Validación con usuarios reales</h3>
+            <p>Pruebas de usabilidad, corrección de hallazgos clave, informe final y sustentación del producto mínimo viable ante las entidades del sector.</p>
+            <span class="timeline__when"><span data-icon="calendar" data-icon-size="13"></span> Mes 3 · Semanas 11–12</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficiarios -->
+    <section class="section section--tight" aria-label="Población beneficiaria">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Población beneficiaria</p>
+          <h2 class="h2">Para quién se construye</h2>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr" id="bene-grid">
+          <div class="card reveal">
+            <span class="tile" data-icon="users" data-icon-size="22"></span>
+            <h3 class="h3" style="font-size:1.05rem;margin-block:var(--sp-4) var(--sp-2)">Beneficiarios directos</h3>
+            <p class="small muted">Habitantes del Distrito que requieren orientación clara sobre dónde y cómo acceder a trámites y atención médica, con especial atención a la población con mayores barreras de acceso a la información, incluidas las comunidades ribereñas y rurales.</p>
+          </div>
+          <div class="card reveal" style="--d:100ms">
+            <span class="tile" data-icon="hospital" data-icon-size="22"></span>
+            <h3 class="h3" style="font-size:1.05rem;margin-block:var(--sp-4) var(--sp-2)">Beneficiarios indirectos</h3>
+            <p class="small muted">Las IPS y entidades del sector salud, que reciben usuarios mejor informados y correctamente encauzados hacia sus canales oficiales, descongestionando los puntos de atención y mejorando la eficiencia operativa del sistema local.</p>
+          </div>
+        </div>
+        <style>@media (max-width:820px){ #bene-grid { grid-template-columns:1fr !important; } }</style>
+      </div>
+    </section>
+
+    <!-- Gobierno de datos -->
+    <section class="section section--tight" id="datos" aria-label="Gobierno de datos">
+      <div class="container container--sm">
+        <div class="section-head reveal">
+          <p class="eyebrow">Gobierno de datos</p>
+          <h2 class="h2">De dónde viene la información</h2>
+        </div>
+        <div class="card reveal">
+          <ul class="checklist" style="gap:var(--sp-4)">
+            <li><span data-icon="check-circle" data-icon-size="17"></span><span><b style="color:var(--c-ink)">Fuentes públicas oficiales:</b> datos publicados por las propias instituciones (p. ej. el Hospital Distrital Luis Ablanque de la Plata) y líneas nacionales de emergencia.</span></li>
+            <li><span data-icon="check-circle" data-icon-size="17"></span><span><b style="color:var(--c-ink)">Levantamiento en campo (fase 1):</b> directorio base consolidado con encuestas, entrevistas y verificación directa ante cada institución.</span></li>
+            <li><span data-icon="check-circle" data-icon-size="17"></span><span><b style="color:var(--c-ink)">Trazabilidad:</b> cada ficha publica su estado («Verificado» / «Por verificar») y su fecha de actualización.</span></li>
+            <li><span data-icon="check-circle" data-icon-size="17"></span><span><b style="color:var(--c-ink)">Minimización de datos:</b> la plataforma no solicita ni almacena datos personales de los ciudadanos (Ley 1581 de 2012).</span></li>
+            <li><span data-icon="check-circle" data-icon-size="17"></span><span><b style="color:var(--c-ink)">Ciclo de reporte:</b> los ciudadanos e instituciones pueden reportar datos desactualizados; los reportes alimentan la verificación periódica.</span></li>
+          </ul>
+          <div class="alert alert--warn" style="margin-top:var(--sp-6)">
+            <span data-icon="alert-triangle" data-icon-size="20"></span>
+            <span>Las fichas marcadas «Por verificar» contienen datos ilustrativos del prototipo. En la fase productiva se sustituirán por la información validada con cada institución mediante convenios de reporte.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Riesgos -->
+    <section class="section section--tight" id="riesgos" aria-label="Riesgos y mitigación">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Gestión de riesgos</p>
+          <h2 class="h2">Riesgos futuros y mitigación</h2>
+        </div>
+        <div class="card card--flush reveal">
+          <div class="table-wrap" style="border:0;border-radius:0">
+            <table class="table">
+              <thead>
+                <tr><th style="width:26%">Riesgo</th><th style="width:34%">Impacto potencial</th><th>Estrategia de mitigación</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>Desactualización de la información</b></td><td>Pérdida de confianza si horarios, requisitos o ubicaciones no reflejan la realidad.</td><td>Proceso y responsables de actualización periódica; acuerdos de reporte de cambios con las IPS; badge de verificación visible.</td></tr>
+                <tr><td><b>Baja adopción ciudadana</b></td><td>El prototipo no logra el uso esperado ni reduce las barreras.</td><td>Validación temprana con usuarios, diseño centrado en el usuario y estrategias de difusión comunitaria.</td></tr>
+                <tr><td><b>Brecha digital y de conectividad</b></td><td>Exclusión de la población con menor acceso a internet o dispositivos.</td><td>Interfaz ligera (cero dependencias, ~0 peticiones externas), versión de bajo consumo y puntos de acceso asistido.</td></tr>
+                <tr><td><b>Dependencia de datos de terceros</b></td><td>La calidad del servicio depende de la información de las IPS y fuentes públicas.</td><td>Convenios institucionales, validación de fuentes y documentación del origen y fecha de cada dato.</td></tr>
+                <tr><td><b>Sostenibilidad técnica y financiera</b></td><td>Falta de recursos para mantener y evolucionar la plataforma.</td><td>Respaldo institucional, plan de mantenimiento y arquitectura de bajo costo (estática, sin servidores propietarios).</td></tr>
+                <tr><td><b>Seguridad y protección de datos</b></td><td>Uso indebido de información o incumplimiento normativo.</td><td>Minimización de datos personales, buenas prácticas de seguridad y cumplimiento de la normativa vigente.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="section section--tight" aria-label="Equipo">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Equipo del proyecto</p>
+          <h2 class="h2">Roles y responsabilidades</h2>
+        </div>
+        <div class="team-grid">
+          <div class="card team-card reveal" style="--d:0ms">
+            <span class="team-card__avatar">CO</span>
+            <span class="team-card__role">Coordinación</span>
+            <span class="team-card__desc">Gestión del alcance, cronograma y relación con entidades del sector.</span>
+          </div>
+          <div class="card team-card reveal" style="--d:70ms">
+            <span class="team-card__avatar">AN</span>
+            <span class="team-card__role">Análisis</span>
+            <span class="team-card__desc">Investigación de campo, historias de usuario y modelo de datos.</span>
+          </div>
+          <div class="card team-card reveal" style="--d:140ms">
+            <span class="team-card__avatar">DI</span>
+            <span class="team-card__role">Diseño UI/UX</span>
+            <span class="team-card__desc">Sistema de diseño, wireframes, prototipado y pruebas de usabilidad.</span>
+          </div>
+          <div class="card team-card reveal" style="--d:210ms">
+            <span class="team-card__avatar">DE</span>
+            <span class="team-card__role">Desarrollo</span>
+            <span class="team-card__desc">Frontend del prototipo, datos centralizados y control de calidad.</span>
+          </div>
+        </div>
+        <p class="tiny reveal" style="margin-top:var(--sp-5);text-align:center">
+          Proyecto académico 2026 · Metodología híbrida (Ágil–Tradicional) · Documento de formulación con normas APA 7.ª edición.
+        </p>
+      </div>
+    </section>
+
+    <!-- Referencias + CTA sistema de diseño -->
+    <section class="section section--tight" aria-label="Referencias">
+      <div class="container container--sm">
+        <div class="section-head reveal">
+          <p class="eyebrow">Referencias del caso</p>
+          <h2 class="h2">Fundamentos de la formulación</h2>
+        </div>
+        <div class="card reveal">
+          <ul class="stack" style="font-size:var(--fs-sm);color:var(--c-ink-2);line-height:1.65">
+            <li>Banco Mundial. (2024). <i>La salud digital y la transformación de los sistemas de salud</i>.</li>
+            <li>Ministerio de Salud y Protección Social. (2023). <i>Análisis de Situación de Salud (ASIS) del Distrito de Buenaventura 2023</i>.</li>
+            <li>Ministerio de Tecnologías de la Información y las Comunicaciones. (2024). <i>Transformación digital para el sector salud: una apuesta de país</i>.</li>
+            <li>Organización Internacional para las Migraciones. (2024). <i>Acercando los servicios de salud mental a la población de Buenaventura</i>. OIM Colombia.</li>
+            <li>Organización Panamericana de la Salud. (s.f.). <i>Sistemas de información para la salud</i>. OPS/OMS.</li>
+            <li>Universidad del Pacífico. (2021). <i>Crisis y deficiencias en el servicio de salud del Distrito de Buenaventura</i>.</li>
+          </ul>
+        </div>
+        <div class="cta-panel reveal" style="margin-top:var(--sp-10);padding-block:clamp(2rem,4vw,3rem)">
+          <h2 class="h2" style="font-size:var(--fs-h3)">Ingeniería detrás de la interfaz</h2>
+          <p style="font-size:var(--fs-body)">El sistema de diseño completo —tokens, glassmorphism, componentes, movimiento y reglas— está documentado en la Biblia de Diseño interactiva.</p>
+          <div class="cta-panel__actions">
+            <a class="btn btn--light" href="sistema-de-diseno.html"><span data-icon="star" data-icon-size="16"></span> Abrir la Biblia de Diseño</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sb-footer"></div>
+
+  <script src="js/core/iconos.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/data/datos.js"></script>
+  <script src="js/core/render.js"></script>
+  <script src="js/core/chrome.js"></script>
+  <script src="js/pages/proyecto.js"></script>
+</body>
+</html>
